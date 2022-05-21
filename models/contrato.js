@@ -3,32 +3,32 @@ const { Schema, model } =  require('mongoose');
 const contratoSchema =  Schema({
     idContrato: {
         type: String,
-        required: [true, 'Por favor, ingrese el ID de la tarea'],
+        required: [true, 'Por favor, ingrese el ID del contrato'],
         unique: true
     },
     idUsuario: {
         type: String,
-        required: [true, 'Por favor, ingrese el ID de la tarea'],
+        required: [true, 'Por favor, ingrese el ID del contrato'],
         unique: true
     },
     idTarea: {
         type: String,
-        required: [true, 'Por favor, ingrese el ID de la tarea'],
+        required: [true, 'Por favor, ingrese el ID del contrato'],
         unique: true
     },
     idUsuario: {
         type: String,
-        required: [true, 'Por favor, ingrese el ID del usuario'],
+        required: [true, 'Por favor, ingrese el ID del contrato'],
         unique: true
     },
     fechaContrato: {
         type:Date,
-        require: [true, 'Por favor, ingrese la fecha de entrega de la tarea']
+        require: [true, 'Por favor, ingrese la fecha del contrato']
     },
     calificacionTarea: {
         type:Number,
         default: 0,
-        require: [true, 'Por favor, ingrese el valor a pagar por la tarea']
+        require: [true, 'Por favor, ingrese su calificacion al servicio']
     }
 })
 
