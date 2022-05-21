@@ -1,8 +1,8 @@
 //Modificar
 const {  response } = require('express');
-const { Producto } = require('../models');
+const { Usuario } = require('../models/usuario');
 
-const obtenerProductos= async (req,res= response)=>{
+const obtenerUsuarios= async (req,res= response)=>{
     const { limite= 10  , desde=0   } =  req.query;
     const query= { estado:true   };
     const [ total, productos ] =  await Promise.all(
@@ -18,12 +18,12 @@ const obtenerProductos= async (req,res= response)=>{
         productos
     })
 }
-const obtenerProducto = async (req,res= response)=>{
+const obtenerUsuario = async (req,res= response)=>{
     const {id} =req.params
     const producto =  await Producto.findById(id);
     res.json(producto);
 }
-const crearProducto = async (req,res)=>{
+const crearUsuario = async (req,res)=>{
     const {estado, ...body } =req.body;
     const existeProducto= await Producto.findOne({nombre:body.nombre});
     if (existeProducto)
