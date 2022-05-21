@@ -1,11 +1,6 @@
 const { Schema, model } =  require('mongoose');
 
 const tareaSchema =  Schema({
-    idTarea: {
-        type: Mongoose.Types.ObjectId,
-        required: [true, 'Por favor, ingrese el ID de la tarea'],
-        unique: true
-    },
     idUsuario: {
         type: Mongoose.Types.ObjectId,
         required: [true, 'Por favor, ingrese el ID del usuario'],

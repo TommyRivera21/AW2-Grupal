@@ -1,11 +1,6 @@
 const { Schema, model } =  require('mongoose');
 
 const contratoSchema =  Schema({
-    idContrato: {
-        type: Mongoose.Types.ObjectId,
-        required: [true, 'Por favor, ingrese el ID del contrato'],
-        unique: true
-    },
     idUsuario: {
         type: Mongoose.Types.ObjectId,
         required: [true, 'Por favor, ingrese el ID del usuario'],

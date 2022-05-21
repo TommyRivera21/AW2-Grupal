@@ -1,11 +1,6 @@
 const { Schema, model, Mongoose } =  require('mongoose');
 
-const usuarioSchema =  Schema({
-    idUsuario: {
-        type: Mongoose.Types.ObjectId,
-        required: [true, 'Por favor, ingrese el ID del usuario'],
-        unique: true
-    },
+const usuarioSchema =  Schema({ 
     nombreUsuario: {
         type: String,
         required: [true, 'Por favor, ingrese el nombre del usuario'],
