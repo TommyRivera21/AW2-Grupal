@@ -5,7 +5,7 @@ const {
     crearUsuario,
     obtenerUsuario,
     obtenerUsuarios
-} = require('../controllers').Producto;
+} = require('../controllers').Usuarios;
 
 
 const { validacionCampos } = require('../middlewares');
