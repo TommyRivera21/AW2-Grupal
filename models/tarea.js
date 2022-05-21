@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const { Usuario } = require("./usuario");
+const { Usuario } = require("./index");
 
 const tareaSchema = Schema({
     idUsuario: {

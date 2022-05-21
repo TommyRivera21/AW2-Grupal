@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
-const { Usuario } = require("./usuario");
-const { Tarea } = require("./tarea");
+const { Usuario } = require("./index");
+const { Tarea } = require("./index");
 const contratoSchema = Schema({
     idUsuario: {
         type: Schema.Types.ObjectId,
@@ -22,4 +22,4 @@ const contratoSchema = Schema({
     }
 })
 
-module.exports = model('Contratos', contratoSchema);
+module.exports = model('Contrato', contratoSchema);

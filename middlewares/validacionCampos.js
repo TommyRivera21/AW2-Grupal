@@ -1,7 +1,5 @@
 const { validationResult  } = require('express-validator');
 
-
-
 const validacionCampos = (req,res, next)=>{
     const errors= validationResult(req);
 
@@ -10,7 +8,6 @@ const validacionCampos = (req,res, next)=>{
         return res.status(400).json(errors)
     }
     next()
-
 }
 
 

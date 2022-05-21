@@ -1,6 +1,6 @@
 //Modificar
 const {  response } = require('express');
-const { Usuario } = require('../models/usuario');
+const { Usuario } = require('../models');
 
 const obtenerUsuarios= async (req,res= response)=>{
     const { limite= 10  , desde=0   } =  req.query;
@@ -43,7 +43,5 @@ const crearUsuario = async (req,res)=>{
 
 
 module.exports={
-    obtenerProductos,
-    obtenerProducto,
-    crearProducto,
+    crearUsuario
 }
