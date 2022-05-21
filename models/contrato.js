@@ -1,29 +1,24 @@
-const { Schema, model } =  require('mongoose');
-
-const contratoSchema =  Schema({
+const { Schema, model } = require('mongoose');
+const { Usuario } = require("./usuario");
+const { Tarea } = require("./tarea");
+const contratoSchema = Schema({
     idUsuario: {
-        type: Mongoose.Types.ObjectId,
+        type: Schema.Types.ObjectId,
+        ref: "Usuario",
         required: [true, 'Por favor, ingrese el ID del usuario'],
-        unique: true
     },
     idTarea: {
-        type: Mongoose.Types.ObjectId,
+        type: Schema.Types.ObjectId,
+        ref: "Tarea",
         required: [true, 'Por favor, ingrese el ID del contrato'],
-        unique: true
-    },
-    idUsuario: {
-        type: String,
-        required: [true, 'Por favor, ingrese el ID del contrato'],
-        unique: true
     },
     fechaContrato: {
-        type:Date,
-        require: [true, 'Por favor, ingrese la fecha del contrato']
+        type: Date,
+        default:new Date(),
     },
     calificacionTarea: {
-        type:Number,
+        type: Number,
         default: 0,
-        require: [true, 'Por favor, ingrese su calificacion al servicio']
     }
 })
 

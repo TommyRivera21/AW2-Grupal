@@ -1,6 +1,6 @@
-const { Schema, model, Mongoose } =  require('mongoose');
+const { Schema, model } = require('mongoose');
 
-const usuarioSchema =  Schema({ 
+const usuarioSchema = Schema({
     nombreUsuario: {
         type: String,
         required: [true, 'Por favor, ingrese el nombre del usuario'],
@@ -19,19 +19,19 @@ const usuarioSchema =  Schema({
         require: [true, 'Por favor ingrese la contraseña del usuario']
     },
     cursoUsuario: {
-        type:String,
+        type: String,
         require: [true, 'Por favor, ingrese el nivel que cursa el usuario']
     },
     carreraUsuario: {
-        type:String,
+        type: String,
         require: [true, 'Por favor, ingrese la carrera en la que estudia el usuario']
     },
     emailUsuario: {
-        type:String,
+        type: String,
         require: [true, 'Por favor, ingrese el correo del usuario']
     },
     fechaUsuario: {
-        type:Date,
+        type: Date,
         require: [true, 'Por favor, ingrese la fecha de nacimiento del usuario']
     }
 })
