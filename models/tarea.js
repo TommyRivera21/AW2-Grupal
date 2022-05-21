@@ -1,11 +1,13 @@
-const { Schema, model } =  require('mongoose');
+const { Schema, model } = require('mongoose');
+const { Usuario } = require("./usuario");
 
-const tareaSchema =  Schema({
+const tareaSchema = Schema({
     idUsuario: {
-        type: Mongoose.Types.ObjectId,
+        type: Schema.Types.ObjectId, 
+        ref: "Usuario",
         required: [true, 'Por favor, ingrese el ID del usuario'],
-        unique: true
-    },
+    }
+    ,
     nombreTarea: {
         type: String,
         required: [true, 'Por favor, ingrese el nombre de la tarea'],
@@ -16,17 +18,15 @@ const tareaSchema =  Schema({
         unique: true
     },
     fechaTarea: {
-        type:Date,
+        type: Date,
         require: [true, 'Por favor, ingrese la fecha de entrega de la tarea']
     },
     estadoTarea: {
         type: Boolean,
         default: true,
-        require: true
     },
     precioTarea: {
-        type:Number,
-        default: 0,
+        type: Number,
         require: [true, 'Por favor, ingrese el valor a pagar por la tarea']
     }
 })
