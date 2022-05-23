@@ -2,8 +2,9 @@ const { Router }= require('express');
 const { check} =  require('express-validator');
 
 const {
-    crearUsuario
-} = require('../controllers').Usuario;
+const {
+    crearUsuario, obtenerUsuario   
+} = require('../controllers').Usuario; 
 
 
 const { validacionCampos } = require('../middlewares');
@@ -15,5 +16,5 @@ router.get('/:id' , check('id','El id no es valido').isMongoId(),
 validacionCampos  , obtenerUsuario );
 router.post('/', check('nombre','El nombre es requerido').not().isEmpty(), 
 validacionCampos ,crearUsuario); 
-
+router.post('/', crearUsuario) 
 module.exports = router;
