@@ -145,16 +145,16 @@ const conexion = "mongodb+srv://Valentinpico:QweQwe23@cluster0.bdqze.mongodb.net
     // await usuario8.save();
     // await usuario9.save();
     // await usuario10.save();
-    const tarea1 = new Tarea({
-        idUsuario: usuarioAlmacenado._id,
-        nombreTarea: "Tarea de bases de datos",
-        descripcionTarea: "Realizar 3 entidades  y relacionarlas entre con el tema: Colegio",
-        fechaTarea: new Date(2022, 4, 30),
-        estadoTarea: true,
-        precioTarea: 10
-    });
+    // const tarea1 = new Tarea({
+    //     idUsuario: usuarioAlmacenado._id,
+    //     nombreTarea: "Tarea de bases de datos",
+    //     descripcionTarea: "Realizar 3 entidades  y relacionarlas entre con el tema: Colegio",
+    //     fechaTarea: new Date(2022, 4, 30),
+    //     estadoTarea: true,
+    //     precioTarea: 10
+    // });
     //proocedemos almacenar usuario
-    const tareaAmacenada = await tarea1.save()
-    console.log(usuarioAlmacenado);
-    console.log(tareaAmacenada);
+    // const tareaAmacenada = await tarea1.save()
+    // console.log(usuarioAlmacenado);
+    // console.log(tareaAmacenada);
 })()

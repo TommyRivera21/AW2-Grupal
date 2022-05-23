@@ -1,9 +1,9 @@
 {
   "name": "project",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
+    "dev":"nodemon --no-warnings index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -18,5 +18,14 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TommyRivera21/AW2-Grupal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TommyRivera21/AW2-Grupal/issues"
+  },
+  "homepage": "https://github.com/TommyRivera21/AW2-Grupal#readme",
+  "description": ""
 }
