@@ -33,13 +33,12 @@ const verifyRegister = async (req, res, next) => {
   }
 
   if (
-    body.contrasenaUsuario === "" ||
-    !regex.password.test(body.contrasenaUsuario)
+    body.contrasenaUsuario === ""
   ) {
     return res
       .status(404)
       .json(
-        "La contraseña debe cumplir los párametro de seguridad. (8-15 caracteres, que incluya mayúscula, minuscula, número, carácter especial y sin espacios en blanco)"
+        "La contraseña debe cumplir los párametro de seguridad."
       );
   }
 
@@ -74,16 +73,15 @@ const verifyRegister = async (req, res, next) => {
 const verifyLogin = async (req, res, next) => {
   const { body } = req;
 
-  if (body.emailUsuario === "" || !regex.email.test(body.emailUsuario)) {
+  if (body.usuario === "" ) {
     return res
       .status(404)
-      .json("El correo electrónico que ingreso no es válido.");
+      .json("ingrese un usuario valido.");
   }
 
   if (
-    body.contrasenaUsuario === "" ||
-    !regex.password.test(body.contrasenaUsuario)
-  ) {
+    body.contrasenaUsuario === "")
+   {
     return res
       .status(404)
       .json(
