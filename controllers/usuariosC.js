@@ -1,51 +1,33 @@
 //Modificar
-const { response } = require("express");
-const { Usuario } = require("../models");
+const {  response } = require('express');
+const { Usuario } = require('../models');
 
-const obtenerUsuarios = async (req, res = response) => {
-  const { limite = 10, desde = 0 } = req.query;
-  const query = { estado: true };
-  const [total, productos] = await Promise.all([
-    Producto.countDocuments(),
-    Producto.find(query).skip(desde).limit(limite),
-  ]);
-  res.json({
-    total,
-    productos,
-  });
-};
-const obtenerUsuario = async (req, res = response) => {
-  const { id } = req.params;
-  const producto = await Producto.findById(id);
-  res.json(producto);
-};
+const obtenerUsuario = async (req,res= response)=>{
+    const {id} =req.params
+    const usuario =  await Usuario.findById(id);
+    res.json(usuario);
+}
+const crearUsuario = async (req,res)=>{
 
-const crearUsuario = async (req, res) => {
-  const { body } = req;
-
-  const emailExist = await Usuario.findOne({ emailUsuario: body.emailUsuario });
-
+    const body=req.body;
+    const existeUsuario= await Usuario.findOne({usuario:body.usuario});
+    if (existeUsuario)
+    {
+        return res.status(400).json({
+            message:`${body.usuario} ya se encuentra registrado`
+        })
+    }
+    const emailExist = await Usuario.findOne({ emailUsuario: body.emailUsuario });
   if (emailExist) {
     return res
       .status(404)
       .json(`El correo ${emailExist.emailUsuario} ya está registrado`);
   }
+    const usuario = new Usuario(body);
+    const usuarioNuevo= await usuario.save();
+    return res.status(201).json(usuarioNuevo);
 
-  const userExist = await Usuario.findOne({ usuario: body.usuario });
-
-  if (userExist) {
-    return res
-      .status(404)
-      .json(
-        `El usuario ${userExist.usuario} ya está registrado, intente con otro usuario`
-      );
-  }
-
-  const user = new Usuario(body);
-  const newUser = await user.save();
-  return res.status(201).json(newUser);
-};
-
+}
 const login = async (req, res) => {
   const { emailUsuario, contrasenaUsuario } = req.body;
   const user = await Usuario.findOne({ emailUsuario, contrasenaUsuario });
@@ -57,9 +39,8 @@ const login = async (req, res) => {
   return res.status(201).json(user);
 };
 
-//////////////////////////////////////////////////////////////////
-
-module.exports = {
-  crearUsuario,
-  login,
-};
+module.exports={
+    obtenerUsuario,
+    crearUsuario,
+  login
+}
