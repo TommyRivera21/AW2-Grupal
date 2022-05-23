@@ -2,24 +2,24 @@
 const {  response } = require('express');
 const { Usuario } = require('../models');
 
-const obtenerUsuario = async (req,res= response)=>{
-    const {id} =req.params
-    const producto =  await Producto.findById(id);
-    res.json(usuario);
-}
 const crearUsuario = async (req,res)=>{
-    const {estado, ...body } =req.body;
-    const existeProducto= await Producto.findOne({nombre:body.nombre});
-    if (existeProducto)
+    const body=req.body;
+    const existeUsuario= await Usuario.findOne({usuario:body.usuario});
+    if (existeUsuario)
     {
         return res.status(400).json({
-            message:`El producto con ese nombre ${body.nombre} ya se encuentra registrado`
+            message:`${body.usuario} ya se encuentra registrado`
         })
     }
-    const producto = new Producto(body);
-    const productoNuevo= await producto.save();
-    return res.status(201).json(productoNuevo);
+    const usuario = new Usuario(body);
+    const usuarioNuevo= await usuario.save();
+    return res.status(201).json(usuarioNuevo);
 
+}
+
+module.exports={
+    obtenerUsuario,
+    crearUsuario
 }
 //////////////////////////////////////////////////////////////////
 
