@@ -2,26 +2,10 @@
 const {  response } = require('express');
 const { Usuario } = require('../models');
 
-const obtenerUsuarios= async (req,res= response)=>{
-    const { limite= 10  , desde=0   } =  req.query;
-    const query= { estado:true   };
-    const [ total, productos ] =  await Promise.all(
-        [
-            Producto.countDocuments(),
-            Producto.find(query)
-            .skip(desde)
-            .limit(limite)
-        ]
-    )
-    res.json({
-        total,
-        productos
-    })
-}
 const obtenerUsuario = async (req,res= response)=>{
     const {id} =req.params
     const producto =  await Producto.findById(id);
-    res.json(producto);
+    res.json(usuario);
 }
 const crearUsuario = async (req,res)=>{
     const {estado, ...body } =req.body;
