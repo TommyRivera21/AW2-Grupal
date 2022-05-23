@@ -8,12 +8,13 @@ const obtenerUsuario = async (req,res= response)=>{
     res.json(usuario);
 }
 const crearUsuario = async (req,res)=>{
-    const {estado, ...body } =req.body;
-    const existeUsuario= await Usuario.findOne({nombre:body.nombre});
+
+    const body=req.body;
+    const existeUsuario= await Usuario.findOne({usuario:body.usuario});
     if (existeUsuario)
     {
         return res.status(400).json({
-            message:`El usuario de nombre ${body.nombre} ya se encuentra registrado`
+            message:`${body.usuario} ya se encuentra registrado`
         })
     }
     const usuario = new Usuario(body);
@@ -21,10 +22,6 @@ const crearUsuario = async (req,res)=>{
     return res.status(201).json(usuarioNuevo);
 
 }
-//////////////////////////////////////////////////////////////////
-
-
-
 
 module.exports={
     obtenerUsuario,
