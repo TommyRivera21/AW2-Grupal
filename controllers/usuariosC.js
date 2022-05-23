@@ -2,6 +2,12 @@
 const {  response } = require('express');
 const { Usuario } = require('../models');
 
+
+const obtenerUsuario = async (req,res= response)=>{
+    const {id} =req.params
+    const usuario =  await Usuario.findById(id);
+    res.json(usuario);
+}
 const crearUsuario = async (req,res)=>{
     const body=req.body;
     const existeUsuario= await Usuario.findOne({usuario:body.usuario});
@@ -19,13 +25,5 @@ const crearUsuario = async (req,res)=>{
 
 module.exports={
     obtenerUsuario,
-    crearUsuario
-}
-//////////////////////////////////////////////////////////////////
-
-
-
-
-module.exports={
     crearUsuario
 }
