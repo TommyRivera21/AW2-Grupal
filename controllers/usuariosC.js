@@ -17,13 +17,30 @@ const crearUsuario = async (req,res)=>{
             message:`${body.usuario} ya se encuentra registrado`
         })
     }
+    const emailExist = await Usuario.findOne({ emailUsuario: body.emailUsuario });
+  if (emailExist) {
+    return res
+      .status(404)
+      .json(`El correo ${emailExist.emailUsuario} ya está registrado`);
+  }
     const usuario = new Usuario(body);
     const usuarioNuevo= await usuario.save();
     return res.status(201).json(usuarioNuevo);
 
 }
+const login = async (req, res) => {
+  const { emailUsuario, contrasenaUsuario } = req.body;
+  const user = await Usuario.findOne({ emailUsuario, contrasenaUsuario });
+
+  if (!user) {
+    return res.status(404).json(`Correo o contraseña incorrectos`);
+  }
+
+  return res.status(201).json(user);
+};
 
 module.exports={
     obtenerUsuario,
-    crearUsuario
+    crearUsuario,
+  login
 }

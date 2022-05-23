@@ -1,15 +1,23 @@
-const { Router }= require('express');
-const { check} =  require('express-validator');
+const { Router } = require("express");
+const { check } = require("express-validator");
+
 
 const {
 
-crearUsuario, obtenerUsuario   
+crearUsuario, obtenerUsuario,login   
 } = require('../controllers').Usuario; 
 
 
-const { validacionCampos } = require('../middlewares');
+const {
+  validacionCampos,
+  verifyLogin,
+  verifyRegister,
+} = require("../middlewares");
 
-const router  = Router();
+const router = Router();
+
+router.post("", verifyRegister, crearUsuario);
+router.post("/login", verifyLogin, login);
 
 // router.get('/', obtenerUsuarios );
 router.get('/:id' , check('id','El id no es valido').isMongoId(), 
@@ -17,5 +25,7 @@ validacionCampos  , obtenerUsuario );
 // router.post('/', check('nombre','El nombre es requerido').not().isEmpty(), 
 // validacionCampos ,crearUsuario); 
 
+
 router.post('/', crearUsuario) 
+
 module.exports = router;
