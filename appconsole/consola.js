@@ -4,32 +4,30 @@ const figlet = require("figlet");
 const ask = require("./ask");
 const fetch = require("node-fetch");
 
+let sesionIniciada = false;
 const run = async () => {
-  clear();
-
+clear();
   console.log(
-    chalk.blue(figlet.textSync("Bienvenido!", { horizontalLayout: "full" }))
+    chalk.blue(figlet.textSync("Servicio de Tareas"))
   );
 
   const option = await ask.askMenu();
 
   // LOGIN
   if (option.menu === "Iniciar Sesión") {
-    console.log(
-      chalk.green(
-        figlet.textSync("Ingrese sus credenciales", {
-          horizontalLayout: "default",
-        })
-      )
-    );
+    await iniciar();
+  } else {
+    await registrarse();
+    await iniciar();
+  }
 
+  async function iniciar() {
+    console.log(chalk.green("Ingrese sus credenciales"));
     const user = await ask.askLogin();
-
     const res = await fetch(
-      "http://localhost:2501/6toB/servicioTareas/api/usuarios/login",
+      `http://localhost:2501/6toB/servicioTareas/api/usuarios/login/${user.usuario}/${user.contrasenaUsuario}`,
       {
-        method: "POST",
-        body: JSON.stringify(user),
+        method: "GET",
         headers: { "Content-Type": "application/json" },
       }
     );
@@ -37,41 +35,22 @@ const run = async () => {
     const data = await res.json();
 
     if (data.nombreUsuario) {
+      clear()
       console.log(
-        chalk.blue(
-          figlet.textSync(
-            `Bienvenido ${data.nombreUsuario} ${data.apellidoUsuario}`,
-            {
-              horizontalLayout: "default",
-              width: 100,
-            }
-          )
-        )
+        chalk.blue(`Bienvenido ${data.nombreUsuario} ${data.apellidoUsuario}`)
       );
+        opcionesUsuario();
     } else {
-      console.log(
-        chalk.red(
-          figlet.textSync(data, {
-            horizontalLayout: "default",
-            width: 100,
-          })
-        )
-      );
+      clear();
+      console.log(chalk.red(data));
+      iniciar();
     }
   }
 
-  // REGISTER
-  if (option.menu === "Registrarse") {
-    console.log(
-      chalk.green(
-        figlet.textSync("Ingresa todos tus datos porfavor", {
-          horizontalLayout: "default",
-          width: 100,
-        })
-      )
-    );
-    const user = await ask.askRegister();
+  async function registrarse() {
 
+    console.log(chalk.green("Ingresa todos tus datos porfavor"));
+    const user = await ask.askRegister();
     const res = await fetch(
       "http://localhost:2501/6toB/servicioTareas/api/usuarios",
       {
@@ -80,28 +59,19 @@ const run = async () => {
         headers: { "Content-Type": "application/json" },
       }
     );
-
     const data = await res.json();
-
     if (data.nombreUsuario) {
-      console.log(
-        chalk.yellow(
-          figlet.textSync(`Registro Exitoso!`, {
-            horizontalLayout: "default",
-            width: 100,
-          })
-        )
-      );
+      console.log(chalk.yellow(`Registro Exitoso!`));
     } else {
-      console.log(
-        chalk.red(
-          figlet.textSync(data, {
-            horizontalLayout: "default",
-            width: 100,
-          })
-        )
-      );
+      clear();
+      console.log(chalk.red(data));
+      registrarse();
     }
+  }
+  async function opcionesUsuario() {
+     
+    const opcion= await ask.askMenuUsuario();
+        
   }
 }
 module.exports = {

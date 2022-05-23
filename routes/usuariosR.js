@@ -16,8 +16,8 @@ const {
 
 const router = Router();
 
-router.post("/", verifyRegister, crearUsuario);
 router.get("/login/:usuario/:contrasena", verifyLogin, login);
+
 // router.get('/', obtenerUsuarios );
 router.get('/:id' , check('id','El id no es valido').isMongoId(), 
 validacionCampos  , obtenerUsuario );
