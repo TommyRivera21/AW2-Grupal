@@ -201,6 +201,56 @@ const confirmarTarea = (num) => {
     choices: ["Si", "No"]
   })
 }
+const crearTarea = () => {
+  return inquirer.prompt([{
+    name: "nombreTarea",
+    type: "input",
+    message: "ingrese el nombre de la tarea: ",
+    validate: (value) => {
+      if (value === "") {
+        return "ingrese nombre de tarea por favor";
+      } else {
+        return true;
+      }
+    }
+  },
+  {
+    name: "descripcionTarea",
+    type: "input",
+    message: "ingrese el descripcion de la tarea: ",
+    validate: (value) => {
+      if (value === "") {
+        return "una descriptcion de la tarea";
+      } else {
+        return true;
+      }
+    }
+  }, {
+    name: "fechaTarea",
+    type: "input",
+    message: "Ingrese su fecha de nacimiento en formato (YYYY-MM-DD):",
+    validate: function (value) {
+      if (value === "" || !moment(value, "YYYY-MM-DD", true).isValid()) {
+        return "Por favor ingrese una fecha válida.";
+      } else {
+        return true;
+      }
+    },
+  },
+  {
+    name: "precioTarea",
+    type: "input",
+    message: "ingrese el precio: ",
+    validate: (value) => {
+      if (value === "" || !regex.number.test(value)) {
+        return "ingrese un precio a la tarea";
+      } else {
+        return true;
+      }
+    }
+  }
+  ])
+}
 module.exports = {
-  askLogin, askRegister, askMenu, askMenuUsuario, volver, elegirTareaParaHacer, confirmarTarea
+  askLogin, askRegister, askMenu, askMenuUsuario, volver, elegirTareaParaHacer, confirmarTarea, crearTarea
 };

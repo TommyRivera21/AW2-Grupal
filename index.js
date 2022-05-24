@@ -5,7 +5,6 @@ const server = new Server();
 server.listen();
 
 
-(async () => {
-
+ (async () => {
     await app.run()
-})()
+})()   

@@ -1,12 +1,12 @@
 //valentin
 const { Router } = require('express');
 
-const { crearContrato } = require('../controllers').Contrato;
+const { crearContrato, mostrarContratosPorIdUsuario } = require('../controllers').Contrato;
 
-const { validacionCampos } = require("../middlewares");
 
 const router = Router();
 
 router.post('/:idU/:idT', crearContrato)
+router.get("/:idU", mostrarContratosPorIdUsuario)
 
 module.exports = router;

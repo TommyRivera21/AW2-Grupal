@@ -1,5 +1,5 @@
 const { validationResult  } = require('express-validator');
-
+const regex=require('../libs').regex;
 const validacionTareas = (req,res, next)=>{
     const {idU} = req.params;
 
@@ -13,18 +13,11 @@ const validacionTareas = (req,res, next)=>{
 const validacionNuevaTarea = (req,res, next)=>{
     const { body } = req;
 
-    if (body.nombreTarea === "" || regex.number.test(body.Tarea)) {
+    if (body.nombreTarea === "" || regex.number.test(body.nombreTarea)) {
         return res
             .status(404)
             .json("El nombre no debe contener números, solo letras.");
-    }
-
-    if (body.descripcionTarea === "" || regex.number.test(body.Tarea)) {
-        return res
-            .status(404)
-            .json("La descripcion no debe contener números, solo letras.");
-    }
-    
+    }    
     if (
         body.fechaTarea === "" ||
         !moment(body.fechaTarea, "YYYY-MM-DD", true).isValid()

@@ -1,6 +1,7 @@
 const chalk = require("chalk");
 const figlet = require("figlet");
 const ask = require("./ask");
+const clear = require("clear");
 const fetch = require("node-fetch");
 let idUsuario = "";
 const run = async () => {
@@ -23,7 +24,7 @@ async function iniciar() {
   console.log(chalk.green("Ingrese sus credenciales"));
   const user = await ask.askLogin();
   const res = await fetch(
-    `http://localhost:2501/6toB/servicioTareas/api/usuarios/login/${user.usuario}/${user.contrasenaUsuario}`,
+    `http://localhost:${process.env.PORT}/6toB/servicioTareas/api/usuarios/login/${user.usuario}/${user.contrasenaUsuario}`,
     {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -34,7 +35,6 @@ async function iniciar() {
 
   if (data.nombreUsuario) {
     clear()
-    console.log(chalk.blue(`Bienvenido ${data.nombreUsuario} ${data.apellidoUsuario}`));
     idUsuario = data._id
     await opcionesUsuario();
   } else {
@@ -49,7 +49,7 @@ async function registrarse() {
   console.log(chalk.green("Ingresa todos tus datos porfavor"));
   const user = await ask.askRegister();
   const res = await fetch(
-    "http://localhost:2501/6toB/servicioTareas/api/usuarios",
+    `http://localhost:${process.env.PORT}/6toB/servicioTareas/api/usuarios`,
     {
       method: "POST",
       body: JSON.stringify(user),
@@ -73,14 +73,13 @@ async function opcionesUsuario() {
     case "Ver tareas publicadas":
       await verTodasLasTareas();
     case "Publicar tarea":
-    //await publicarTarea();
+      await publicarTarea();
 
     case "Ver mis contratos":
-    //await verMisContratos();
+      await verMisContratos();
 
     case "Cerrar sesion":
       await run();
-
 
     default:
       break;
@@ -89,7 +88,7 @@ async function opcionesUsuario() {
 
 async function verMisTareas() {
   clear();
-  const resa = await fetch(`http://localhost:2501/6toB/servicioTareas/api/tareas/${idUsuario}`,
+  const resa = await fetch(`http://localhost:${process.env.PORT}/6toB/servicioTareas/api/tareas/${idUsuario}`,
     {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -108,7 +107,7 @@ async function verMisTareas() {
 }
 async function verTodasLasTareas() {
   clear();
-  const resa = await fetch(`http://localhost:2501/6toB/servicioTareas/api/tareas/tareasAceptadas`,
+  const resa = await fetch(`http://localhost:${process.env.PORT}/6toB/servicioTareas/api/tareas/tareasAceptadas`,
     {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -145,21 +144,68 @@ async function verTodasLasTareas() {
 
 }
 async function publicarTarea() {
+  const datosTarea = await ask.crearTarea();
+  datosTarea.idUsuario=idUsuario;
+
+  clear();
+  console.log(datosTarea);
+  const resa = await fetch(`http://localhost:${process.env.PORT}/6toB/servicioTareas/api/tareas/nuevaTarea`,
+    {
+      method: "POST",
+      body: JSON.stringify(datosTarea),
+      headers: { "Content-Type": "application/json" },
+    });
+  console.log(await resa.json());
+  await opcionesUsuario();
+
 }
 async function verMisContratos() {
+
+  clear();
+  const resa = await fetch(`http://localhost:${process.env.PORT}/6toB/servicioTareas/api/contratos/${idUsuario}`,
+    {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    });
+  const contrato = await resa.json();
+
+  let i = 1;
+
+  await contrato.forEach(async (e) => {
+    const resa2 = await fetch(`http://localhost:${process.env.PORT}/6toB/servicioTareas/api/tareas/tarea/${e.idTarea}`,
+      {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      });
+    const tarea = await resa2.json();
+    const resa3 = await fetch(`http://localhost:${process.env.PORT}/6toB/servicioTareas/api/usuarios/${tarea.idUsuario}`,
+      {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+    const usuarioDueñoTarea = await resa3.json();
+
+
+    console.log(`Contrato ${i}`);
+    console.log('\tnombre de Tarea: ' + tarea.nombreTarea);
+    console.log(`\tNombre del dueño: ${usuarioDueñoTarea.nombreUsuario} ${usuarioDueñoTarea.apellidoUsuario}`);
+    console.log('\tFecha Tarea: ' + e.fechaContrato);
+    console.log('\tPrecio:' + tarea.precioTarea + '\n');
+    i += 1;
+
+  });
+  await opcionesUsuario();
 }
+
 async function crearContrato(usuario, tarea) {
-  const resa = await fetch(`http://localhost:2501/6toB/servicioTareas/api/contratos/${usuario}/${tarea}`,
+  const resa = await fetch(`http://localhost:${process.env.PORT}/6toB/servicioTareas/api/contratos/${usuario}/${tarea}`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     });
-  const data = await resa.json();
+  clear();
   console.log("Contrato Generado con exito!!");
-  await opcionesUsuario();
-}
-async function retroceder() {
-  await ask.volver();
   await opcionesUsuario();
 }
 
