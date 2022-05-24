@@ -11,7 +11,6 @@ const { Tarea } = require('../models');
 //Funcion para crear una nueva tarea
 const nuevaTarea = async (req, res) => {
     const { body } = req;
-    console.log("fadsfadsfasdf"+body)
     const cuerpo = {
         idUsuario: mongo.ObjectId(body.idUsuario),
         nombreTarea: body.nombreTarea,

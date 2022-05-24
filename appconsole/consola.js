@@ -146,9 +146,7 @@ async function verTodasLasTareas() {
 async function publicarTarea() {
   const datosTarea = await ask.crearTarea();
   datosTarea.idUsuario=idUsuario;
-
   clear();
-  console.log(datosTarea);
   const resa = await fetch(`http://localhost:${process.env.PORT}/6toB/servicioTareas/api/tareas/nuevaTarea`,
     {
       method: "POST",
