@@ -1,8 +1,11 @@
-const app= require('./appconsole');
+const app = require('./appconsole').app;
 require("dotenv").config();
 const Server = require("./server");
 const server = new Server();
 server.listen();
 
 
-app.app.run();
+(async () => {
+
+    await app.run()
+})()
