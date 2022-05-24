@@ -1,16 +1,13 @@
-//Tommy - Consulta de tareas
+//Tommy - Consulta de tareas de usuario
 const { response } = require('express');
 const { mongo } = require('mongoose');
 const { Tarea } = require('../models');
 
-const consultarTareasAceptadas = async (req, res) => {
+const consultarTareas = async (req, res) => {
     const { idU } = req.params;
     
 
     const task = await Tarea.find({idUsuario:idU})
-
-    //Consulta las tareas por estado
-    //const task = await Tarea.find({idUsuario:idU, estadoTarea: false})
 
     if(!task){
 
@@ -21,6 +18,22 @@ const consultarTareasAceptadas = async (req, res) => {
 
 }
 
+
+//Consulta de Tareas Aceptadas de un usuario
+
+const consultarTareasAceptadasUsuario = async (req, res) => {
+    const { idU } = req.params;
+
+    const task = await Promise.all({idUsuario:idU, estadoTarea: true})
+
+    res.json([task]);
+}
+
+//Consulta de Tareas Aceptadas generales
+
+
+
 module.exports = {
-    consultarTareasAceptadas,
+    consultarTareas,
+    consultarTareasAceptadasUsuario,
 }
