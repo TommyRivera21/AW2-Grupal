@@ -17,12 +17,13 @@ const { consultarTareasAceptadasUsuario } = require('../controllers').Tareas;
 
 
 
-const {validacionTareas} = require('../middlewares');
+const { validacionTareas } = require('../middlewares');
 
+const { validacionNuevaTarea } = require('../middlewares');
 
 
 //ruta de consulta para crear tareas
-router.post('/nuevatarea', nuevaTarea)
+router.post('/nuevatarea', validacionNuevaTarea,validacionTareas, nuevaTarea)
 
 //ruta de todas las tareas aceptadas de los usuarios
 router.get('/tareasaceptadas', consultarTareasAceptadas)
