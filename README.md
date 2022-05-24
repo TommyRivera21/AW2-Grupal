@@ -1,4 +1,4 @@
-# Servicio Tareas - Grupo 4
+# Servicio De Elaboracion de Tareas - Grupo 4
 
 Repositorio grupal para la asignatura Aplicaciones Web 2
 
