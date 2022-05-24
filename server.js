@@ -32,9 +32,7 @@ class Server {
 
     }
     listen() {
-        this._express.listen(this.port, () => {
-            console.log(`Servidor corriendo en el puerto ${this.port}`);
-        })
+        this._express.listen(this.port);
     }
 }
 

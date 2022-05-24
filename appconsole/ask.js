@@ -157,19 +157,50 @@ const askRegister = () => {
 }
 
 
-const askMenuUsuario=()=>{
+const askMenuUsuario = () => {
   const questions = [
     {
-      name: "menu",
+      name: "opciones",
       type: "list",
       message: "opciones",
-      choices: ["Ver tareas publicadas por otros usuarios","Ver mis Tareas Publicadas","Publicar tarea","Ver mis contratos", "Cerrar sesion"],
+      choices: ["Ver tareas publicadas", "Ver mis Tareas", "Publicar tarea", "Ver mis contratos", "Cerrar sesion"],
     },
   ];
 
   return inquirer.prompt(questions);
 }
 
+const volver = () => {
+  return inquirer.prompt({
+    name: "menu",
+    type: "list",
+    menssage: "Opciones",
+    choices: ["Volver"]
+  });
+}
+
+const elegirTareaParaHacer = (num) => {
+  listaTareas = []
+  for (let i = 1; i <= num; i++) {
+    listaTareas.push("Tarea " + i);
+
+  }
+  listaTareas.push("Volver");
+  return inquirer.prompt({
+    name: "opciones",
+    type: "list",
+    menssage: "Que tarea desea realizar?",
+    choices: listaTareas
+  });
+}
+const confirmarTarea = (num) => {
+  return inquirer.prompt({
+    name: "opcion",
+    type: "list",
+    message: `Estas seguro de realizar la ${num}`,
+    choices: ["Si", "No"]
+  })
+}
 module.exports = {
-  askLogin, askRegister, askMenu, askMenuUsuario
+  askLogin, askRegister, askMenu, askMenuUsuario, volver, elegirTareaParaHacer, confirmarTarea
 };

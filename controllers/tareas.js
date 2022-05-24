@@ -60,9 +60,10 @@ const consultarTareasUsuario = async (req, res) => {
 const consultarTareasAceptadasUsuario = async (req, res) => {
     const { idU } = req.params;
 
-    const task = await Promise.all({idUsuario:idU, estadoTarea: true})
+    const task = await Tarea.find({idUsuario:idU})
 
     return res.status(201).json(task);
+
 }
 
 
