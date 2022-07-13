@@ -8,7 +8,6 @@ class Server {
         this.router = express.Router();
         this.port = process.env.PORT;
         this.paths = {
-            usuarios: '/api/usuarios',
             contratos: '/api/contratos',
             tareas: '/api/tareas',
         }
@@ -26,7 +25,6 @@ class Server {
         this.app.use(express.json());
     }
     routes() {
-        this.app.use(this.paths.usuarios, require('./routes/usuariosR'));
         this.app.use(this.paths.contratos, require('./routes/contratosR'));
         this.app.use(this.paths.tareas, require('./routes/tareasR'));
 

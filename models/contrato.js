@@ -1,6 +1,4 @@
 const { Schema, model } = require('mongoose');
-const { Usuario } = require("./index");
-const { Tarea } = require("./index");
 const contratoSchema = Schema({
     idUsuario: {
         type: Schema.Types.ObjectId,
