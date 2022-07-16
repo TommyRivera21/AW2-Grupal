@@ -4,12 +4,12 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _603822ca = () => interopDefault(import('..\\pages\\Login.vue' /* webpackChunkName: "pages/Login" */))
-const _420999f1 = () => interopDefault(import('..\\pages\\Registro.vue' /* webpackChunkName: "pages/Registro" */))
-const _6fac1612 = () => interopDefault(import('..\\pages\\UsuarioRegistrado\\Contratos.vue' /* webpackChunkName: "pages/UsuarioRegistrado/Contratos" */))
-const _dea90348 = () => interopDefault(import('..\\pages\\UsuarioRegistrado\\Perfil.vue' /* webpackChunkName: "pages/UsuarioRegistrado/Perfil" */))
-const _aece8248 = () => interopDefault(import('..\\pages\\UsuarioRegistrado\\TareasUsuario.vue' /* webpackChunkName: "pages/UsuarioRegistrado/TareasUsuario" */))
-const _e26ba8b8 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _f1642fa4 = () => interopDefault(import('..\\pages\\Login.vue' /* webpackChunkName: "pages/Login" */))
+const _5773d37e = () => interopDefault(import('..\\pages\\Registro.vue' /* webpackChunkName: "pages/Registro" */))
+const _037ce604 = () => interopDefault(import('..\\pages\\UsuarioRegistrado\\Contratos.vue' /* webpackChunkName: "pages/UsuarioRegistrado/Contratos" */))
+const _7c33f06f = () => interopDefault(import('..\\pages\\UsuarioRegistrado\\Perfil.vue' /* webpackChunkName: "pages/UsuarioRegistrado/Perfil" */))
+const _2fc26169 = () => interopDefault(import('..\\pages\\UsuarioRegistrado\\TareasUsuario.vue' /* webpackChunkName: "pages/UsuarioRegistrado/TareasUsuario" */))
+const _46342537 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -24,27 +24,27 @@ export const routerOptions = {
 
   routes: [{
     path: "/Login",
-    component: _603822ca,
+    component: _f1642fa4,
     name: "Login"
   }, {
     path: "/Registro",
-    component: _420999f1,
+    component: _5773d37e,
     name: "Registro"
   }, {
     path: "/UsuarioRegistrado/Contratos",
-    component: _6fac1612,
+    component: _037ce604,
     name: "UsuarioRegistrado-Contratos"
   }, {
     path: "/UsuarioRegistrado/Perfil",
-    component: _dea90348,
+    component: _7c33f06f,
     name: "UsuarioRegistrado-Perfil"
   }, {
     path: "/UsuarioRegistrado/TareasUsuario",
-    component: _aece8248,
+    component: _2fc26169,
     name: "UsuarioRegistrado-TareasUsuario"
   }, {
     path: "/",
-    component: _e26ba8b8,
+    component: _46342537,
     name: "index"
   }],
 
