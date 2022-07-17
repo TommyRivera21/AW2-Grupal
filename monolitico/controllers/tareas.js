@@ -22,6 +22,12 @@ const nuevaTarea = async (req, res) => {
     const tareaNueva = await tarea.save();
     return res.status(201).json(tareaNueva);
 }
+//Funcion de consultar una tarea
+const consultarUnaTarea = async (req, res) => {
+    const { idT } = req.params;
+    const tarea = await Tarea.findById(idT);
+    res.json(tarea);
+}
 //Funcion de Tareas Aceptadas generales
 const consultarTareasAceptadas = async (req, res) => {
     const task = await Tarea.find({ estadoTarea: true })
@@ -30,7 +36,6 @@ const consultarTareasAceptadas = async (req, res) => {
 //Funcion para consultar todas las tareas de un usuario
 const consultarTareasUsuario = async (req, res) => {
     const { idU } = req.params;
-
 
     const task = await Tarea.find({ idUsuario: idU })
 
@@ -50,12 +55,6 @@ const consultarTareasAceptadasUsuario = async (req, res) => {
 
     return res.status(201).json(task);
 
-}
-
-const consultarUnaTarea = async (req, res) => {
-    const { idT } = req.params;
-    const tarea = await Tarea.findById(idT);
-    res.json(tarea);
 }
 
 module.exports = {

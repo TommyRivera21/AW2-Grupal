@@ -36,7 +36,7 @@ export default {
   css: [
   ],
 
-  middleware: ["student", "teacher"],
+  middleware: ["usuarioRegistrado"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -67,7 +67,7 @@ export default {
 
     //url del monolitico anterior que contiene el servicio de usuarios 
     // esto se debe cambiar y configurar con el nuevo url del docker con el microservicio incluido
-    baseURL: "http://localhost:2500/6toB/servicioTareas/api/usuarios",
+    baseURL: "http://localhost:2500/6toB/servicioTareas",
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
