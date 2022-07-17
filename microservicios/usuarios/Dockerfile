@@ -1,5 +1,5 @@
 # descargo una imagen de node
-FROM node 
+FROM node
 
 # copio todos mis archivos dentro de la ruta /var/www de mi docker
 COPY . /app
@@ -14,9 +14,9 @@ RUN npm install
 ENV PORT 3000
 
 # Valor de el enlace de la conexion a la base de datos 
-ENV mongodb+srv://julio_casanova99:Gtasanjose99@cluster0.itpiq.mongodb.net/?retryWrites=true&w=majority
+ENV MONGO_URI "mongodb://mongo:27017/test"
 
-ENV APPLICATION_NAME "Servicio Tareas"
+ENV APPLICATION_NAME "Microservicio Usuarios"
 
 # expongo el puerto 3000 de mi docker para su posterior uso
 EXPOSE 3000
