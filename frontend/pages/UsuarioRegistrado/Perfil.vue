@@ -1,7 +1,3 @@
 <template>
-    
+  <PerfilUsuario />
 </template>
-
-<script>
-
-</script>

@@ -1,7 +1,3 @@
 <template>
-    
+  <FormularioRegistro />
 </template>
-
-<script>
-
-</script>
