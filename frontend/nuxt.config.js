@@ -63,7 +63,11 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: 'http://localhost:8080/v2/api',
+    // baseURL: 'http://localhost:8080/v2/api',
+
+    //url del monolitico anterior que contiene el servicio de usuarios 
+    // esto se debe cambiar y configurar con el nuevo url del docker con el microservicio incluido
+    baseURL: "http://localhost:2500/6toB/servicioTareas/api/usuarios",
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
