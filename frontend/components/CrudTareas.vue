@@ -135,7 +135,7 @@ async created(id:string) {
     } catch (error) {
       console.log(error);
     }
-  },
+  }
 };
 
 </script>

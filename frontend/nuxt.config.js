@@ -12,7 +12,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/icono.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/icono.png' },
       {
         href: "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",
         rel: "stylesheet",
@@ -37,7 +37,6 @@ export default {
   ],
 
   middleware: ["usuarioRegistrado"],
-
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
   ],

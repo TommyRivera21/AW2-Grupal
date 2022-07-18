@@ -2,43 +2,57 @@
   {
     "name": "Login",
     "path": "/Login",
-    "component": "C:\\\\Users\\\\Usuario\\\\Desktop\\\\Proyecto-AW2\\\\AW2-Grupal\\\\frontend\\\\pages\\\\Login.vue",
+    "component": "D:\\\\Repositorios\\\\AW2-Grupal\\\\frontend\\\\pages\\\\Login.vue",
     "chunkName": "pages/Login",
-    "_name": "_f1642fa4"
+    "_name": "_603822ca"
   },
   {
     "name": "Registro",
     "path": "/Registro",
-    "component": "C:\\\\Users\\\\Usuario\\\\Desktop\\\\Proyecto-AW2\\\\AW2-Grupal\\\\frontend\\\\pages\\\\Registro.vue",
+    "component": "D:\\\\Repositorios\\\\AW2-Grupal\\\\frontend\\\\pages\\\\Registro.vue",
     "chunkName": "pages/Registro",
-    "_name": "_5773d37e"
+    "_name": "_420999f1"
   },
   {
     "name": "UsuarioRegistrado-Contratos",
     "path": "/UsuarioRegistrado/Contratos",
-    "component": "C:\\\\Users\\\\Usuario\\\\Desktop\\\\Proyecto-AW2\\\\AW2-Grupal\\\\frontend\\\\pages\\\\UsuarioRegistrado\\\\Contratos.vue",
+    "component": "D:\\\\Repositorios\\\\AW2-Grupal\\\\frontend\\\\pages\\\\UsuarioRegistrado\\\\Contratos.vue",
     "chunkName": "pages/UsuarioRegistrado/Contratos",
-    "_name": "_037ce604"
+    "_name": "_6fac1612"
   },
   {
     "name": "UsuarioRegistrado-Perfil",
     "path": "/UsuarioRegistrado/Perfil",
-    "component": "C:\\\\Users\\\\Usuario\\\\Desktop\\\\Proyecto-AW2\\\\AW2-Grupal\\\\frontend\\\\pages\\\\UsuarioRegistrado\\\\Perfil.vue",
+    "component": "D:\\\\Repositorios\\\\AW2-Grupal\\\\frontend\\\\pages\\\\UsuarioRegistrado\\\\Perfil.vue",
     "chunkName": "pages/UsuarioRegistrado/Perfil",
-    "_name": "_7c33f06f"
+    "_name": "_dea90348"
   },
   {
     "name": "UsuarioRegistrado-TareasUsuario",
     "path": "/UsuarioRegistrado/TareasUsuario",
-    "component": "C:\\\\Users\\\\Usuario\\\\Desktop\\\\Proyecto-AW2\\\\AW2-Grupal\\\\frontend\\\\pages\\\\UsuarioRegistrado\\\\TareasUsuario.vue",
+    "component": "D:\\\\Repositorios\\\\AW2-Grupal\\\\frontend\\\\pages\\\\UsuarioRegistrado\\\\TareasUsuario.vue",
     "chunkName": "pages/UsuarioRegistrado/TareasUsuario",
-    "_name": "_2fc26169"
+    "_name": "_aece8248"
+  },
+  {
+    "name": "UsuarioRegistrado-tasks",
+    "path": "/UsuarioRegistrado/tasks",
+    "component": "D:\\\\Repositorios\\\\AW2-Grupal\\\\frontend\\\\pages\\\\UsuarioRegistrado\\\\tasks\\\\index.vue",
+    "chunkName": "pages/UsuarioRegistrado/tasks/index",
+    "_name": "_572f7074"
+  },
+  {
+    "name": "UsuarioRegistrado-tasks-form",
+    "path": "/UsuarioRegistrado/tasks/form",
+    "component": "D:\\\\Repositorios\\\\AW2-Grupal\\\\frontend\\\\pages\\\\UsuarioRegistrado\\\\tasks\\\\form.vue",
+    "chunkName": "pages/UsuarioRegistrado/tasks/form",
+    "_name": "_f8bcf3dc"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\Users\\\\Usuario\\\\Desktop\\\\Proyecto-AW2\\\\AW2-Grupal\\\\frontend\\\\pages\\\\index.vue",
+    "component": "D:\\\\Repositorios\\\\AW2-Grupal\\\\frontend\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
-    "_name": "_46342537"
+    "_name": "_e26ba8b8"
   }
 ]

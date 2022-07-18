@@ -6,7 +6,7 @@
 
         <ul class="navbar-nav me-auto d-flex flex-row">
           <li class="nav-item me-3" v-if="login">
-            <nuxt-link to="/UsuarioRegistrado" class="nav-link active"
+              <nuxt-link to="/UsuarioRegistrado" class="nav-link active"
               >Estudiante</nuxt-link
             >
           </li>
@@ -37,17 +37,17 @@
   </nav>
 </template>
 
-<script>
+<script lang="ts">
 
   import { mapActions, mapGetters } from "vuex";
 
   export default {
     computed: {
-      ...mapGetters("authentic", ["id", "name", "login"]),
+      ...mapGetters("login", ["id", "name", "login"]),
     },
 
     methods: {
-      ...mapActions("authentic", ["cerrarSesion"]),
+      ...mapActions("login", ["cerrarSesion"]),
     },
   };
 </script>

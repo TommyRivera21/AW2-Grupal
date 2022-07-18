@@ -1,5 +1,5 @@
-# descargo una imagen de node en su version 12 de alpine linux desde dockerhub necesaria para que mi proyecto corra sin problemas
-FROM node:12-alpine
+# descargo una imagen de node 
+FROM node
 # declaro el directorio de trabajo de mi docker
 WORKDIR /var/www
 # copio todos mis archivos dentro de la ruta /var/www de mi docker
@@ -8,7 +8,7 @@ COPY . /var/www
 RUN npm install --only=production
 # declaro las variables de entornos necesarias para la aplicacion
 ENV PORT 3000
-ENV MONGO_URI "mongodb://mongo:27017/test"
+ENV MONGO_URI "mongodb+srv://Valentinpico:QweQwe23@cluster0.bdqze.mongodb.net/servicioTareas?retryWrites=true&w=majority"
 ENV APPLICATION_NAME "Servicio Monolitico"
 # expongo el puerto 3000 de mi docker para su posterior uso
 EXPOSE 3000
