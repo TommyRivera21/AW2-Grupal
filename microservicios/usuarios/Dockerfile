@@ -14,7 +14,7 @@ RUN npm install
 ENV PORT 3000
 
 # Valor de el enlace de la conexion a la base de datos 
-ENV MONGO_URI "mongodb://mongo:27017/test"
+ENV MONGO_URI "mongodb+srv://julio_casanova99:Gtasanjose99@cluster0.itpiq.mongodb.net/?retryWrites=true&w=majority"
 
 ENV APPLICATION_NAME "Microservicio Usuarios"
 

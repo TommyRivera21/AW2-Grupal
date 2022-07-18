@@ -1,8 +1,29 @@
 {
+  "CrudContratos": {
+    "description": "Auto imported from components/CrudContratos.vue"
+  },
+  "CrudTareas": {
+    "description": "Auto imported from components/CrudTareas.vue"
+  },
+  "FomularioTarea": {
+    "description": "Auto imported from components/FomularioTarea.vue"
+  },
   "Footer": {
     "description": "Auto imported from components/Footer.vue"
   },
-  "Navigation": {
-    "description": "Auto imported from components/Navigation.vue"
+  "FormularioLogin": {
+    "description": "Auto imported from components/FormularioLogin.vue"
+  },
+  "FormularioRegistro": {
+    "description": "Auto imported from components/FormularioRegistro.vue"
+  },
+  "ListaTareas": {
+    "description": "Auto imported from components/ListaTareas.vue"
+  },
+  "Navbar": {
+    "description": "Auto imported from components/Navbar.vue"
+  },
+  "PerfilUsuario": {
+    "description": "Auto imported from components/PerfilUsuario.vue"
   }
 }

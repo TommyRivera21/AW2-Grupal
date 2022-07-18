@@ -14,7 +14,7 @@ import FomularioTarea from "~/components/FomularioTarea.vue";
 export default {
     head() {
         return {
-            title: "Usuario | Formulario Tarea",
+            title: "ServiTareas | Formulario Tarea",
             meta: [
                 {
                     hid: "description",

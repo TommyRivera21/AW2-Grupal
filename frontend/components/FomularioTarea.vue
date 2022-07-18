@@ -130,10 +130,7 @@ export default {
       if (this.taskId === "") {
         console.log(task);
         try {
-          const res = await axios.post<guardarTarea>(
-            `$this.$axios.defaults.baseURL/task/usuarioregistradoId${id}`,
-            task
-          );
+          const res = await axios.post<guardarTarea>(`${this.$axios.defaults.baseURL}/task/usuarioregistradoId${id}`, task);
           if (res.status === 201) {
             // vaciando los inputs para que se puedan ingresar mas tareas
             this.nombreTarea = "";
