@@ -4,14 +4,14 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _f1642fa4 = () => interopDefault(import('..\\pages\\Login.vue' /* webpackChunkName: "pages/Login" */))
-const _5773d37e = () => interopDefault(import('..\\pages\\Registro.vue' /* webpackChunkName: "pages/Registro" */))
-const _037ce604 = () => interopDefault(import('..\\pages\\UsuarioRegistrado\\Contratos.vue' /* webpackChunkName: "pages/UsuarioRegistrado/Contratos" */))
-const _7c33f06f = () => interopDefault(import('..\\pages\\UsuarioRegistrado\\Perfil.vue' /* webpackChunkName: "pages/UsuarioRegistrado/Perfil" */))
-const _2fc26169 = () => interopDefault(import('..\\pages\\UsuarioRegistrado\\TareasUsuario.vue' /* webpackChunkName: "pages/UsuarioRegistrado/TareasUsuario" */))
-const _1f9e6f72 = () => interopDefault(import('..\\pages\\UsuarioRegistrado\\tasks\\index.vue' /* webpackChunkName: "pages/UsuarioRegistrado/tasks/index" */))
-const _35fc67df = () => interopDefault(import('..\\pages\\UsuarioRegistrado\\tasks\\form.vue' /* webpackChunkName: "pages/UsuarioRegistrado/tasks/form" */))
-const _46342537 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _0752cc09 = () => interopDefault(import('..\\pages\\Contratos.vue' /* webpackChunkName: "pages/Contratos" */))
+const _6f9900ab = () => interopDefault(import('..\\pages\\CrearTareas.vue' /* webpackChunkName: "pages/CrearTareas" */))
+const _603822ca = () => interopDefault(import('..\\pages\\Login.vue' /* webpackChunkName: "pages/Login" */))
+const _0408a1e8 = () => interopDefault(import('..\\pages\\PanelTareas.vue' /* webpackChunkName: "pages/PanelTareas" */))
+const _420999f1 = () => interopDefault(import('..\\pages\\Registro.vue' /* webpackChunkName: "pages/Registro" */))
+const _2b088624 = () => interopDefault(import('..\\pages\\TareasUsuario.vue' /* webpackChunkName: "pages/TareasUsuario" */))
+const _dea90348 = () => interopDefault(import('..\\pages\\UsuarioRegistrado\\Perfil.vue' /* webpackChunkName: "pages/UsuarioRegistrado/Perfil" */))
+const _e26ba8b8 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -25,36 +25,36 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/Contratos",
+    component: _0752cc09,
+    name: "Contratos"
+  }, {
+    path: "/CrearTareas",
+    component: _6f9900ab,
+    name: "CrearTareas"
+  }, {
     path: "/Login",
-    component: _f1642fa4,
+    component: _603822ca,
     name: "Login"
   }, {
+    path: "/PanelTareas",
+    component: _0408a1e8,
+    name: "PanelTareas"
+  }, {
     path: "/Registro",
-    component: _5773d37e,
+    component: _420999f1,
     name: "Registro"
   }, {
-    path: "/UsuarioRegistrado/Contratos",
-    component: _037ce604,
-    name: "UsuarioRegistrado-Contratos"
+    path: "/TareasUsuario",
+    component: _2b088624,
+    name: "TareasUsuario"
   }, {
     path: "/UsuarioRegistrado/Perfil",
-    component: _7c33f06f,
+    component: _dea90348,
     name: "UsuarioRegistrado-Perfil"
   }, {
-    path: "/UsuarioRegistrado/TareasUsuario",
-    component: _2fc26169,
-    name: "UsuarioRegistrado-TareasUsuario"
-  }, {
-    path: "/UsuarioRegistrado/tasks",
-    component: _1f9e6f72,
-    name: "UsuarioRegistrado-tasks"
-  }, {
-    path: "/UsuarioRegistrado/tasks/form",
-    component: _35fc67df,
-    name: "UsuarioRegistrado-tasks-form"
-  }, {
     path: "/",
-    component: _46342537,
+    component: _e26ba8b8,
     name: "index"
   }],
 

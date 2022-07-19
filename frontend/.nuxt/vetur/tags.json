@@ -23,9 +23,6 @@
   "Navbar": {
     "description": "Auto imported from components/Navbar.vue"
   },
-  "Navbar2": {
-    "description": "Auto imported from components/navbar2.vue"
-  },
   "PerfilUsuario": {
     "description": "Auto imported from components/PerfilUsuario.vue"
   }

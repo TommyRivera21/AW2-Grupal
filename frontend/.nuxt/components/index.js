@@ -6,7 +6,6 @@ export { default as FormularioLogin } from '../..\\components\\FormularioLogin.v
 export { default as FormularioRegistro } from '../..\\components\\FormularioRegistro.vue'
 export { default as ListaTareas } from '../..\\components\\ListaTareas.vue'
 export { default as Navbar } from '../..\\components\\Navbar.vue'
-export { default as Navbar2 } from '../..\\components\\navbar2.vue'
 export { default as PerfilUsuario } from '../..\\components\\PerfilUsuario.vue'
 
 // nuxt/nuxt.js#8607

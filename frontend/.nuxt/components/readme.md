@@ -14,5 +14,4 @@ You can directly use them in pages and other components without the need to impo
 - `<FormularioRegistro>` | `<formulario-registro>` (components/FormularioRegistro.vue)
 - `<ListaTareas>` | `<lista-tareas>` (components/ListaTareas.vue)
 - `<Navbar>` | `<navbar>` (components/Navbar.vue)
-- `<Navbar2>` | `<navbar2>` (components/navbar2.vue)
 - `<PerfilUsuario>` | `<perfil-usuario>` (components/PerfilUsuario.vue)
