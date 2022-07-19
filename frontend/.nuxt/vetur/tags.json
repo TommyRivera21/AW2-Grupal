@@ -1,4 +1,7 @@
 {
+  "CardContrato": {
+    "description": "Auto imported from components/cardContrato.vue"
+  },
   "CrudContratos": {
     "description": "Auto imported from components/CrudContratos.vue"
   },

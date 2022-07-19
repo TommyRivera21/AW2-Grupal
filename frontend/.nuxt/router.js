@@ -4,14 +4,14 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _0752cc09 = () => interopDefault(import('..\\pages\\Contratos.vue' /* webpackChunkName: "pages/Contratos" */))
-const _6f9900ab = () => interopDefault(import('..\\pages\\CrearTareas.vue' /* webpackChunkName: "pages/CrearTareas" */))
-const _603822ca = () => interopDefault(import('..\\pages\\Login.vue' /* webpackChunkName: "pages/Login" */))
-const _0408a1e8 = () => interopDefault(import('..\\pages\\PanelTareas.vue' /* webpackChunkName: "pages/PanelTareas" */))
-const _420999f1 = () => interopDefault(import('..\\pages\\Registro.vue' /* webpackChunkName: "pages/Registro" */))
-const _2b088624 = () => interopDefault(import('..\\pages\\TareasUsuario.vue' /* webpackChunkName: "pages/TareasUsuario" */))
-const _dea90348 = () => interopDefault(import('..\\pages\\UsuarioRegistrado\\Perfil.vue' /* webpackChunkName: "pages/UsuarioRegistrado/Perfil" */))
-const _e26ba8b8 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _71e21460 = () => interopDefault(import('..\\pages\\Contratos.vue' /* webpackChunkName: "pages/Contratos" */))
+const _73778f42 = () => interopDefault(import('..\\pages\\CrearTareas.vue' /* webpackChunkName: "pages/CrearTareas" */))
+const _071afa72 = () => interopDefault(import('..\\pages\\Login.vue' /* webpackChunkName: "pages/Login" */))
+const _07e7307f = () => interopDefault(import('..\\pages\\PanelTareas.vue' /* webpackChunkName: "pages/PanelTareas" */))
+const _9e572a8c = () => interopDefault(import('..\\pages\\Registro.vue' /* webpackChunkName: "pages/Registro" */))
+const _70f101c5 = () => interopDefault(import('..\\pages\\TareasUsuario.vue' /* webpackChunkName: "pages/TareasUsuario" */))
+const _2d6538b3 = () => interopDefault(import('..\\pages\\UsuarioRegistrado\\Perfil.vue' /* webpackChunkName: "pages/UsuarioRegistrado/Perfil" */))
+const _73fd910a = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -26,35 +26,35 @@ export const routerOptions = {
 
   routes: [{
     path: "/Contratos",
-    component: _0752cc09,
+    component: _71e21460,
     name: "Contratos"
   }, {
     path: "/CrearTareas",
-    component: _6f9900ab,
+    component: _73778f42,
     name: "CrearTareas"
   }, {
     path: "/Login",
-    component: _603822ca,
+    component: _071afa72,
     name: "Login"
   }, {
     path: "/PanelTareas",
-    component: _0408a1e8,
+    component: _07e7307f,
     name: "PanelTareas"
   }, {
     path: "/Registro",
-    component: _420999f1,
+    component: _9e572a8c,
     name: "Registro"
   }, {
     path: "/TareasUsuario",
-    component: _2b088624,
+    component: _70f101c5,
     name: "TareasUsuario"
   }, {
     path: "/UsuarioRegistrado/Perfil",
-    component: _dea90348,
+    component: _2d6538b3,
     name: "UsuarioRegistrado-Perfil"
   }, {
     path: "/",
-    component: _e26ba8b8,
+    component: _73fd910a,
     name: "index"
   }],
 
