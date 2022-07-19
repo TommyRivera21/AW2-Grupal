@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <div class="container">
     <form @submit.prevent>
         <div class="row mb-3">
@@ -123,4 +123,3 @@ export default {
     },
 };
 </script>
- -->
