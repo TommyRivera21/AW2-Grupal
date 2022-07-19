@@ -84,10 +84,13 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
+  <card-contrato></card-contrato>
   </div>
 </template>
 
 <script lang="ts">
+
+import cardContrato from "../components/cardContrato.vue";
   export default {
     head() {
       return {
@@ -101,5 +104,8 @@
         ],
       };
     },
+    components:{
+      cardContrato,
+    }
   };
 </script>

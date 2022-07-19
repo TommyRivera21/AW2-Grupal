@@ -1,3 +1,4 @@
+export { default as CardContrato } from '../..\\components\\cardContrato.vue'
 export { default as CrudContratos } from '../..\\components\\CrudContratos.vue'
 export { default as CrudTareas } from '../..\\components\\CrudTareas.vue'
 export { default as FomularioTarea } from '../..\\components\\FomularioTarea.vue'

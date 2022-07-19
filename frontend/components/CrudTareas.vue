@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="container">
     <div class="table-responsive">
       <table
@@ -139,3 +139,4 @@ async created(id:string) {
 };
 
 </script>
+ -->
