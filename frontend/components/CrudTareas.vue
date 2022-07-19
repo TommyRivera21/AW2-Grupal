@@ -16,7 +16,7 @@
         </thead>
         <tbody>
           <tr
-            v-for="item of tasks"
+            v-for="item of tarea"
             :key="item._id"
             :class="{
               'bg-light': item.advertencia === 2,
@@ -32,9 +32,9 @@
             <td>
               <nuxt-link
                 :to="{
-                  path: '/usuarioregistrado/tasks/form',
+                  path: '/CrearTareas/' + item._id,
                   query: {
-                    taskId: item._id,
+                    Id: item._id,
                     nombre: item.nombreTarea,
                     descripcion: item.descripcionTarea,
                     fecha: item.fechaTarea,
@@ -68,6 +68,7 @@
   import axios from "axios";
   import moment from "moment";
   import jquery from "jquery";
+  import Vue from "vue";
   import { mapGetters } from "vuex";
   
   
@@ -89,52 +90,18 @@
     name: "Crud",
     data() {
       return {
-        tasks: [],
+        tarea: [],
       };
   },
 
-  computed: {
-    ...mapGetters("authentic", ["id"]),
-  },
 
   methods: {
     async eliminarTarea(id:string) {
-      try {
-        const res = await axios.delete<eliminarTareaResponse>(
-          `$this.$axios.defaults.baseURL}/task/${id}`
-          );
-        `this.$router.push("/usuarioregistrado/")`;
-        } catch (error) {
-      console.log(error);
-    }
   },
 },
 
 async created(id:string) {
-    try {
-      const res = await axios.get<createdTareaResponse>(
-        `$this.$axios.defaults.baseURL}/task/usuarioregistradoId${id}`
-          );
-
-      res.data.map((dato: { fechaTarea: moment.MomentInput; advertencia: number; }) => {
-        if (moment() > moment(dato.fechaTarea)) {
-          dato.advertencia = 0;
-        } else {
-          if (moment(dato.fechaTarea).subtract(2, "d") < moment()) {
-            dato.advertencia = 1;
-          } else {
-            dato.advertencia = 2;
-          }
-        }
-        dato.fechaTarea = moment(dato.fechaTarea).format(
-          "YYYY-MM-DD hh:mm a"
-        );
-        return dato;
-      });
-      this.tasks = res.data;
-    } catch (error) {
-      console.log(error);
-    }
+    
   }
 };
 

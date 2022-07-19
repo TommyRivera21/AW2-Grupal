@@ -82,7 +82,7 @@ import jQuery from "jquery";
 
 import { mapGetters } from "vuex";
 
-interface ITask {
+interface ITarea {
   id: string;
   nombreTarea: string; 
   descripcionTarea: string;
@@ -110,95 +110,16 @@ export default {
       fechaTarea: "",
       estadoTarea: "",
       precioTarea: "",
-      taskId: "",
     };
   },
 
-  computed: {
-    ...mapGetters("authentic", ["id"]),
-  },
   methods: {
-    async guardarTarea(nombre:string, descripcion:string, fechaTarea:string, precioTarea:string) {
-      let task = {
-        nombreTarea: nombre,
-        descripcionTarea: descripcion,
-        fechaTarea: fechaTarea,
-        estadoTarea: "false",
-        precioTarea: precioTarea,
-        usuarioregistrado: `this.id`,
-      };
-      if (this.taskId === "") {
-        console.log(task);
-        try {
-          const res = await axios.post<guardarTarea>(`${this.$axios.defaults.baseURL}/task/usuarioregistradoId${id}`, task);
-          if (res.status === 201) {
-            // vaciando los inputs para que se puedan ingresar mas tareas
-            this.nombreTarea = "";
-            this.descripcionTarea = "";
-            this.fechaTarea = "";
-            this.estadoTarea = "";
-            this.precioTarea = "";
-            this.parametroSeleccionado = "";
-          }
-        } catch (error) {
-          console.log(error);
-        }
-      } else {
-        console.log(task);
-        try {
-          const res = await axios.patch(
-            `$this.$axios.defaults.baseURL/task/$this.taskId`,
-            task
-          );
-          console.log(res.data);
-        } catch (error) {
-          console.log(error);
-        }
-        `this.$router.push("/usuarioregistrado/tasks")`;
-      }
+    async guardarTarea() {
+
     },
   },
+    async created() {
 
-  async created() {
-    if (this.id === "") {
-      console.log("No ha iniciado sesion como profesor");
-    } else {
-      try {
-        const res = await axios.get(
-          `${this.$axios.defaults.baseURL}/teacher/${this.id}`
-        );
-
-        res.data.carreras.forEach((element) => {
-          this.carreras.push(element.nombre);
-          this.carreras.sort();
-          element.niveles.forEach((element) => {
-            this.niveles.push(element.nombre);
-            this.niveles.sort();
-            element.asignaturas.forEach((element) => {
-              this.asignaturas.push(element.nombre);
-              this.asignaturas.sort();
-            });
-          });
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    console.log(this.$route.query);
-    if (this.$route.query.hasOwnProperty("taskId")) {
-      // agregando la informacion a los inputs traida desde el crud
-
-      this.taskId = this.$route.query.taskId;
-      this.nombreTarea = this.$route.query.nombre;
-      this.descripcionTarea = this.$route.query.descripcion;
-      this.estadoTarea = this.$route.query.estadoTarea;
-      this.nivelSeleccionado = this.$route.query.nivel;
-      this.asignaturaSeleccionado = this.$route.query.asignatura;
-      this.parametroSeleccionado = this.$route.query.parametro;
-      this.ponderacion = this.$route.query.ponderacion;
-      this.fechaTarea = (`this.$route.query.fechaTarea`); 
-    }
-  },
+    },
 };
 </script>

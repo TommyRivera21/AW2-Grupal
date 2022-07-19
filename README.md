@@ -16,9 +16,9 @@ Repositorio grupal para la asignatura Aplicaciones Web 2
 
 ## Estructura de Aplicación Completa
 
-1. **monolithic**: Servicio Monolitico (Api Completa V1)
-1. **microservices**
-   - **usuarios**: Microservicio del modulo de Usuarios (Api V2)
+1. **monolitico**: Servicio Monolitico
+1. **microservicios**
+   - **usuarios**: Microservicio del modulo de Usuarios
 1. **frontend**: Aplicacion frontend Universal (CSR y SSR)
 
 ---
