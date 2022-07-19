@@ -2,57 +2,57 @@
   {
     "name": "Contratos",
     "path": "/Contratos",
-    "component": "C:\\\\Users\\\\valen\\\\OneDrive\\\\Escritorio\\\\proyecto WEB II\\\\frontend\\\\pages\\\\Contratos.vue",
+    "component": "D:\\\\Repositorios\\\\AW2-Grupal\\\\frontend\\\\pages\\\\Contratos.vue",
     "chunkName": "pages/Contratos",
-    "_name": "_71e21460"
+    "_name": "_0752cc09"
   },
   {
     "name": "CrearTareas",
     "path": "/CrearTareas",
-    "component": "C:\\\\Users\\\\valen\\\\OneDrive\\\\Escritorio\\\\proyecto WEB II\\\\frontend\\\\pages\\\\CrearTareas.vue",
+    "component": "D:\\\\Repositorios\\\\AW2-Grupal\\\\frontend\\\\pages\\\\CrearTareas.vue",
     "chunkName": "pages/CrearTareas",
-    "_name": "_73778f42"
+    "_name": "_6f9900ab"
   },
   {
     "name": "Login",
     "path": "/Login",
-    "component": "C:\\\\Users\\\\valen\\\\OneDrive\\\\Escritorio\\\\proyecto WEB II\\\\frontend\\\\pages\\\\Login.vue",
+    "component": "D:\\\\Repositorios\\\\AW2-Grupal\\\\frontend\\\\pages\\\\Login.vue",
     "chunkName": "pages/Login",
-    "_name": "_071afa72"
+    "_name": "_603822ca"
   },
   {
     "name": "PanelTareas",
     "path": "/PanelTareas",
-    "component": "C:\\\\Users\\\\valen\\\\OneDrive\\\\Escritorio\\\\proyecto WEB II\\\\frontend\\\\pages\\\\PanelTareas.vue",
+    "component": "D:\\\\Repositorios\\\\AW2-Grupal\\\\frontend\\\\pages\\\\PanelTareas.vue",
     "chunkName": "pages/PanelTareas",
-    "_name": "_07e7307f"
+    "_name": "_0408a1e8"
   },
   {
     "name": "Registro",
     "path": "/Registro",
-    "component": "C:\\\\Users\\\\valen\\\\OneDrive\\\\Escritorio\\\\proyecto WEB II\\\\frontend\\\\pages\\\\Registro.vue",
+    "component": "D:\\\\Repositorios\\\\AW2-Grupal\\\\frontend\\\\pages\\\\Registro.vue",
     "chunkName": "pages/Registro",
-    "_name": "_9e572a8c"
+    "_name": "_420999f1"
   },
   {
     "name": "TareasUsuario",
     "path": "/TareasUsuario",
-    "component": "C:\\\\Users\\\\valen\\\\OneDrive\\\\Escritorio\\\\proyecto WEB II\\\\frontend\\\\pages\\\\TareasUsuario.vue",
+    "component": "D:\\\\Repositorios\\\\AW2-Grupal\\\\frontend\\\\pages\\\\TareasUsuario.vue",
     "chunkName": "pages/TareasUsuario",
-    "_name": "_70f101c5"
+    "_name": "_2b088624"
   },
   {
     "name": "UsuarioRegistrado-Perfil",
     "path": "/UsuarioRegistrado/Perfil",
-    "component": "C:\\\\Users\\\\valen\\\\OneDrive\\\\Escritorio\\\\proyecto WEB II\\\\frontend\\\\pages\\\\UsuarioRegistrado\\\\Perfil.vue",
+    "component": "D:\\\\Repositorios\\\\AW2-Grupal\\\\frontend\\\\pages\\\\UsuarioRegistrado\\\\Perfil.vue",
     "chunkName": "pages/UsuarioRegistrado/Perfil",
-    "_name": "_2d6538b3"
+    "_name": "_dea90348"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\Users\\\\valen\\\\OneDrive\\\\Escritorio\\\\proyecto WEB II\\\\frontend\\\\pages\\\\index.vue",
+    "component": "D:\\\\Repositorios\\\\AW2-Grupal\\\\frontend\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
-    "_name": "_73fd910a"
+    "_name": "_e26ba8b8"
   }
 ]

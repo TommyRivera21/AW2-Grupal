@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-card title="nombre Tarea" sub-title="Nombre Usuario">
-   
+
             <b-card-text>{{curso}}</b-card-text>
             <b-card-text>{{descripcionTarea}}</b-card-text>
             <b-card-text>{{precioTarea}}</b-card-text>

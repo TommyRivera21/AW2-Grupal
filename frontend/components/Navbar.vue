@@ -3,15 +3,11 @@
     <div class="w-100 row">
       <div class="col-4 d-flex justify-content-center">
         <nuxt-link class="navbar-brand" to="/">Servi Tareas</nuxt-link>
-        <ul class="navbar-nav me-auto d-flex flex-row">
-              <nuxt-link to="/UsuarioRegistrado" class="nav-link active"
-              >Usuario</nuxt-link>
-        </ul>
       </div>
-      <div class="col-4 d-flex justify-content-end align-items-center">
+      <div class="col-5 d-flex justify-content-end align-items-center">
         <nuxt-link to="/login" class="text-decoration-none">
           <button class="btn btn-success rounded-3">Iniciar Sesión</button>
-        </nuxt-link>
+          </nuxt-link>
         <nuxt-link to="/Registro" class="text-decoration-none">
           <button class="btn btn-success rounded-3">Registrate</button>
         </nuxt-link>

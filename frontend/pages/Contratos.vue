@@ -1,5 +1,5 @@
 <template>
-    
+    <cardContrato />
 </template>
 
 <script>

@@ -1,4 +1,5 @@
 <template >
+
   <div
     id="carouselExampleCaptions"
     class="carousel carousel-dark slide"
@@ -52,7 +53,7 @@
       </div>
       <div class="carousel-item" data-bs-interval="10000">
         <img
-          src="/fondo3.png"
+          src="/fondo3.jpg"
           class="d-block w-100"
           alt="Imagen de fondo de la Infraestructura de la FACCI"
           height="720"
@@ -84,13 +85,10 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  <card-contrato></card-contrato>
   </div>
 </template>
 
 <script lang="ts">
-
-import cardContrato from "../components/cardContrato.vue";
   export default {
     head() {
       return {
@@ -104,8 +102,5 @@ import cardContrato from "../components/cardContrato.vue";
         ],
       };
     },
-    components:{
-      cardContrato,
-    }
   };
 </script>
