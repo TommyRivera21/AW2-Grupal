@@ -8,12 +8,12 @@ class Server {
         this.router = express.Router();
         this.port = process.env.PORT;
         this.paths = {
-            usuarios: '/api/usuarios'
+            usuarios: '/usuarios'
         }
         this.conectarDB();
         this.middlewares();
         this.routes();
-        this.router.use('/6toB/servicioTareas', this.app);
+        this.router.use('/6toB', this.app);
         this._express = express().use(this.router);
     }
     async conectarDB() {

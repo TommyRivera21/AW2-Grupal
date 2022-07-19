@@ -17,11 +17,7 @@ const router = Router();
 
 router.get("/login/:usuario/:contrasena", verifyLogin, login);
 
-// router.get('/', obtenerUsuarios );
 router.get('/:id', obtenerUsuario);
-// router.post('/', check('nombre','El nombre es requerido').not().isEmpty(), 
-// validacionCampos ,crearUsuario); 
-
 
 router.post('/', crearUsuario)
 
