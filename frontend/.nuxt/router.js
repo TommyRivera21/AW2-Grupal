@@ -4,13 +4,13 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _71e21460 = () => interopDefault(import('..\\pages\\Contratos.vue' /* webpackChunkName: "pages/Contratos" */))
+const _73778f42 = () => interopDefault(import('..\\pages\\CrearTareas.vue' /* webpackChunkName: "pages/CrearTareas" */))
 const _071afa72 = () => interopDefault(import('..\\pages\\Login.vue' /* webpackChunkName: "pages/Login" */))
+const _07e7307f = () => interopDefault(import('..\\pages\\PanelTareas.vue' /* webpackChunkName: "pages/PanelTareas" */))
 const _9e572a8c = () => interopDefault(import('..\\pages\\Registro.vue' /* webpackChunkName: "pages/Registro" */))
-const _19858740 = () => interopDefault(import('..\\pages\\UsuarioRegistrado\\Contratos.vue' /* webpackChunkName: "pages/UsuarioRegistrado/Contratos" */))
+const _70f101c5 = () => interopDefault(import('..\\pages\\TareasUsuario.vue' /* webpackChunkName: "pages/TareasUsuario" */))
 const _2d6538b3 = () => interopDefault(import('..\\pages\\UsuarioRegistrado\\Perfil.vue' /* webpackChunkName: "pages/UsuarioRegistrado/Perfil" */))
-const _3c3ff6b6 = () => interopDefault(import('..\\pages\\UsuarioRegistrado\\TareasUsuario.vue' /* webpackChunkName: "pages/UsuarioRegistrado/TareasUsuario" */))
-const _0673cd8b = () => interopDefault(import('..\\pages\\UsuarioRegistrado\\tasks\\index.vue' /* webpackChunkName: "pages/UsuarioRegistrado/tasks/index" */))
-const _273cabca = () => interopDefault(import('..\\pages\\UsuarioRegistrado\\tasks\\form.vue' /* webpackChunkName: "pages/UsuarioRegistrado/tasks/form" */))
 const _73fd910a = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -25,33 +25,33 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/Contratos",
+    component: _71e21460,
+    name: "Contratos"
+  }, {
+    path: "/CrearTareas",
+    component: _73778f42,
+    name: "CrearTareas"
+  }, {
     path: "/Login",
     component: _071afa72,
     name: "Login"
+  }, {
+    path: "/PanelTareas",
+    component: _07e7307f,
+    name: "PanelTareas"
   }, {
     path: "/Registro",
     component: _9e572a8c,
     name: "Registro"
   }, {
-    path: "/UsuarioRegistrado/Contratos",
-    component: _19858740,
-    name: "UsuarioRegistrado-Contratos"
+    path: "/TareasUsuario",
+    component: _70f101c5,
+    name: "TareasUsuario"
   }, {
     path: "/UsuarioRegistrado/Perfil",
     component: _2d6538b3,
     name: "UsuarioRegistrado-Perfil"
-  }, {
-    path: "/UsuarioRegistrado/TareasUsuario",
-    component: _3c3ff6b6,
-    name: "UsuarioRegistrado-TareasUsuario"
-  }, {
-    path: "/UsuarioRegistrado/tasks",
-    component: _0673cd8b,
-    name: "UsuarioRegistrado-tasks"
-  }, {
-    path: "/UsuarioRegistrado/tasks/form",
-    component: _273cabca,
-    name: "UsuarioRegistrado-tasks-form"
   }, {
     path: "/",
     component: _73fd910a,
